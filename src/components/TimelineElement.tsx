@@ -9,7 +9,7 @@ export default function TimelineElement({children, date}:TimelineProps){
     return(
         <VerticalTimelineElement 
           contentStyle={{
-            background: 'rgb(15, 23, 42)', 
+            background: 'rgba(15, 23, 42)', 
             color:"#fff",
             border:'none',
             boxShadow: 'none',

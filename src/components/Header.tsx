@@ -4,7 +4,7 @@ import PageButton from "./PageButton";
 
 export default function Header(){
     return(
-        <div className="w-full flex items-center justify-between bg-gray-950 h-20 px-5 py-2 text-white font-mono">
+        <div className="w-full flex items-center justify-between bg-gray-950 h-20 px-5 py-2 text-white font-mono z-10">
             <div className="h-full">
                 <img src={ICMCLogo} className="h-full w-auto opacity-80"/>
             </div>
