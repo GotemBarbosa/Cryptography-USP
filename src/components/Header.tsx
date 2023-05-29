@@ -10,8 +10,8 @@ export default function Header(){
             </div>
             <div className="flex w-1/3 justify-around">
                 <PageButton text="Museu do ICMC" link="https://mc.icmc.usp.br/"/>
-                <PageButton text="Sobre nós" link=""/>
-                <PageButton text="Mais" link=""/>
+                <PageButton text="Sobre nós" link="/sobre-nos"/>
+                <PageButton text="Fontes" link="/fontes"/>
             </div>
         </div>
     )

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Demonstração cifra de césar</h1>
+    <form name="f1">
+        <div id="texts">
+            <label>text to encode: </label>
+            <input type="text" name="t1" oninput="this.value = this.value.toUpperCase()"><br>
+            <label>text to decode: </label>
+            <input type="text" name="t2" oninput="this.value = this.value.toUpperCase()"><br>
+            <label>key: </label>
+            <input type="number" name="A0">
+        </div>
+    </form>
+    <button onclick = encode()>Encode </button>
+    <button onclick = decode()>Decode </button>
+</body>
+<script>
+    let strshifted;
+    function encode() {
+        strshifted = "";
+        str = document.f1.t1.value;
+        let k = document.f1.A0.value;
+        let upperstr = str.toUpperCase();
+        for (let i = 0; i < upperstr.length; i++) {
+            if (upperstr.charAt(i) < 65 || upperstr.charAt(i) > 90)
+                strshifted += upperstr.charAt(i);
+            else
+                strshifted += String.fromCharCode(((upperstr.charCodeAt(i) + parseInt(k) - 65) % 26) + 65);
+        }
+        document.f1.t2.value = strshifted;
+    }
+    function decode() {
+        strunshifted = "";
+        str = document.f1.t2.value;
+        let k = document.f1.A0.value;
+        let upperstr = str.toUpperCase();
+        for (let i = 0; i < upperstr.length; i++) {
+            if (upperstr.charAt(i) < 65 || upperstr.charAt(i) > 90)
+                strunshifted += upperstr.charAt(i);
+            else
+                strunshifted += String.fromCharCode(((upperstr.charCodeAt(i) - parseInt(k) + 65) % 26) + 65);
+        }
+        document.f1.t1.value = strunshifted;
+    }
+</script>
+</html>

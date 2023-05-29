@@ -6,7 +6,7 @@ export default function Definitions(){
             <div 
                 className='
                     bg-stone-900 w-10/12 h-40 rounded-lg shadow-2xl text-slate-100 font-poppins 
-                    flex flex-col justify-center items-center text-center px-10
+                    flex flex-col justify-center items-center text-center px-10 z-10
                 '
             >
                 <h1 className='font-semibold text-green-600 text-2xl mb-5'>O que é Criptografia?</h1>
