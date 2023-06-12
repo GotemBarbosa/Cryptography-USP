@@ -10,12 +10,9 @@ export default function Definitions(){
                 '
             >
                 <h1 className='font-semibold text-green-600 text-2xl mb-5'>O que é Criptografia?</h1>
-                <p>
-                    Criptografia é 
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Fuga minus hic reiciendis? Distinctio, quis repudiandae, maxime 
-                    quisquam architecto iusto dolores magnam officiis labore aliquam 
-                    eos et ad esse nisi quasi.
+                <p className='font-poppins'>
+                A criptografia é o estudo dos princípios e métodos de segurança da comunicação a fim de tornar a informação ininteligível para aqueles não autorizados, que se iniciou como estudo sistemático na ciência há aproximadamente 1 século. 
+                As raízes da criptografia são encontradas nas antigas civilizações, como a egípcia, hebraica, babilônica, grega e romana.
                 </p>
             </div>
     
