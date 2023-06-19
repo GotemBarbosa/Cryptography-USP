@@ -1,69 +1,54 @@
 import { useState } from "react";
-import React from "react";
 import ModelICon from "../ModelIcon";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { Popover } from "@mui/material";
 import InfoPopover from "../InfoPopover";
+import { TripleDES, mode, pad, enc } from "crypto-js";
 
-interface model {
+interface Model {
   isModel?: boolean;
 }
 
-export default function Caesar({ isModel }: model) {
-  const [encodeText, setEncodeText] = useState("");
-  const [decodeText, setDecodeText] = useState("");
+export default function TripleDes({ isModel }: Model) {
+  const [text, setText] = useState("");
   const [key, setKey] = useState("");
+  const [ciphertext, setCiphertext] = useState("");
 
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
   const handleIconClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleCloseIcon = () => {
     setAnchorEl(null);
   };
 
-  const encode = () => {
-    let strshifted = "";
-    let upperstr = encodeText.toUpperCase();
-    for (let i = 0; i < upperstr.length; i++) {
-      if (Number(upperstr.charAt(i)) < 65 || Number(upperstr.charAt(i)) > 90)
-        strshifted += upperstr.charAt(i);
-      else
-        strshifted += String.fromCharCode(
-          ((upperstr.charCodeAt(i) + (key !== "" ? parseInt(key) : 0) - 65) %
-            26) +
-            65
-        );
-    }
-    setDecodeText(strshifted);
+  const encryptTripleDES = () => {
+    const encrypted = TripleDES.encrypt(text, key, {
+      mode: mode.ECB,
+      padding: pad.Pkcs7,
+    }).toString();
+    setCiphertext(encrypted);
   };
 
-  const decode = () => {
-    let strunshifted = "";
-    let upperstr = decodeText.toUpperCase();
-    for (let i = 0; i < upperstr.length; i++) {
-      if (Number(upperstr.charAt(i)) < 65 || Number(upperstr.charAt(i)) > 90)
-        strunshifted += upperstr.charAt(i);
-      else
-        strunshifted += String.fromCharCode(
-          ((upperstr.charCodeAt(i) - (key !== "" ? parseInt(key) : 0) + 65) %
-            26) +
-            65
-        );
-    }
-    setEncodeText(strunshifted);
+  const decryptTripleDES = () => {
+    const decrypted = TripleDES.decrypt(ciphertext, key, {
+      mode: mode.ECB,
+      padding: pad.Pkcs7,
+    }).toString(enc.Utf8);
+    setCiphertext(decrypted);
   };
 
   return (
     <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-80">
       <div className="flex h-12 w-full justify-between">
         <div className="">
-          <ModelICon type="classic" />
+          <ModelICon type="modern" />
         </div>
         <div className="flex relative">
-          <div className="text-white font-semibold text-2xl underline mr-10 h-full  flex items-center justify-center ">
-            Cifra de Cesar
+          <div className="text-white font-semibold text-2xl underline mr-10 h-full pr-10 flex items-center justify-center ">
+            Triple DES
           </div>
           <div className="relative">
             {isModel ? (
@@ -100,58 +85,50 @@ export default function Caesar({ isModel }: model) {
         </div>
       </div>
       <div className="flex flex-col mt-8">
-        <label className="font-medium text-base text-white">
-          Texto para encriptar:
-        </label>
+        <label className="font-medium text-base text-white">Texto:</label>
         <input
           type="text"
           className="mt-3 outline-none bg-[#d9d9d9] rounded-lg px-3 w-full h-8 text-black font-medium"
-          name="encriptar"
-          value={encodeText}
+          name="texto"
+          value={text}
           placeholder="valor"
           onChange={(e) => {
-            setEncodeText(e.target.value);
-          }}
-        />
-        <label className="font-medium text-base text-white mt-3">
-          Texto para decriptar:
-        </label>
-        <input
-          type="text"
-          className="mt-3 outline-none bg-[#d9d9d9] rounded-lg px-3 w-full h-8 text-black font-medium"
-          name="decriptar"
-          value={decodeText}
-          placeholder="valor"
-          onChange={(e) => {
-            setDecodeText(e.target.value);
+            setText(e.target.value);
           }}
         />
         <label className="font-medium text-base text-white mt-3">Chave:</label>
         <input
-          type="number"
+          type="text"
           className="mt-3 outline-none bg-[#d9d9d9] rounded-lg px-3 w-full h-8 text-black font-medium"
           name="chave"
           value={key}
-          placeholder="0"
+          placeholder="valor"
           onChange={(e) => {
             setKey(e.target.value);
           }}
         />
       </div>
+      <div className="flex flex-col mt-3">
+        <label className="font-medium text-base text-white">Resultado:</label>
+        <input
+          type="text"
+          className="mt-3 outline-none text-sm bg-[#d9d9d9] rounded-lg px-3 w-full h-8 text-black font-medium"
+          name="ciphertext"
+          value={ciphertext}
+          placeholder="valor"
+          readOnly
+        />
+      </div>
       <div className="flex justify-between px-3 mt-4">
         <div
-          onClick={() => {
-            encode();
-          }}
-          className="w-28 rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          onClick={encryptTripleDES}
+          className="w-28 rounded-lg h-9 bg-emerald-500 select-none  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Encriptar
         </div>
         <div
-          onClick={() => {
-            decode();
-          }}
-          className="w-28 rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          onClick={decryptTripleDES}
+          className="w-28 rounded-lg h-9 bg-emerald-500 select-none  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Decriptar
         </div>

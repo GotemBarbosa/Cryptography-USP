@@ -1,4 +1,4 @@
-import { VerticalTimelineElement } from 'react-vertical-timeline-component';
+import { VerticalTimelineElement } from "react-vertical-timeline-component";
 
 type TimelineProps = {
   children: string | JSX.Element | JSX.Element[];
@@ -6,24 +6,23 @@ type TimelineProps = {
 };
 
 export default function TimelineElement({ children, date }: TimelineProps) {
-
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: 'rgba(15, 23, 42)',
-        color: '#fff',
-        border: 'none',
-        boxShadow: 'none',
+        background: "rgba(15, 23, 42)",
+        color: "#fff",
+        border: "none",
+        boxShadow: "none",
         zIndex: 3,
       }}
       contentArrowStyle={{
-        borderRight: 'none',
+        borderRight: "none",
         zIndex: 3,
       }}
       date={date}
       iconStyle={{
-        boxShadow: '0 0 0 3px #047857',
-        background: '#065F46',
+        boxShadow: "0 0 0 3px #047857",
+        background: "#065F46",
         zIndex: 3,
       }}
     >

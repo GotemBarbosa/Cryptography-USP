@@ -1,161 +1,83 @@
+import "react-vertical-timeline-component/style.min.css";
 
-import { VerticalTimeline}  from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
+import { BsArrowRightCircle } from "react-icons/bs";
+import { IoIosArrowForward } from "react-icons/io";
 
-import { useSpring, animated } from 'react-spring';
+import Header from "../components/Header";
 
-import Header from '../components/Header';
-import TimelineElement from '../components/TimelineElement';
-import Background from '../components/Background';
-import Definitions from '../components/Definitions';
-
-import TechBackground from '../assets/backgroundCode.jpg';
-import Caesar from '../components/cryptoModels/Caesar';
-
-import CitalaImg from '../assets/citala.jpg';
-import PolybiusImg from '../assets/Polybius_square.png';
-import CeasarImg from '../assets/CifraCesar.jpg';
-import AlkindImg from '../assets/Alkindi.png';
-import { useEffect, useState } from 'react';
-
+import TechBackground from "../assets/TechBg4.jpg";
+import ModelICon from "../components/ModelIcon";
+import { NavLink } from "react-router-dom";
 
 function Home() {
-  const [timelineHeight, setTimelineHeight] = useState(0);
-
-  useEffect(()=>{
-    const handleScroll= ()=>{
-      setTimelineHeight(window.scrollY);
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    return()=>{
-      window.removeEventListener('scroll', handleScroll)
-    }
-  },[])
-
-  const timelineAnimation = useSpring({
-    height: timelineHeight,
-    config: {
-      duration: 100, 
-      tension: 170, 
-      friction: 14,
-      reset: true, 
-    }
-  })
-
-
   return (
-    <div className='inset-0 z-0 overflow-x-hidden' >
-      <Background />
-      <div className="relative z-10 flex flex-col w-screen h-full min-h-screen font-mono  bg-slate-900 bg-gradient-to-tr from-cyan-900/50 via-slate-800/10 to-slate-900 ">
-        <Header/>
+    <div className="relative z-10 flex flex-col w-screen h-full min-h-screen font-mono  bg-slate-800 ">
+      <Header home />
 
-        <div className='relative'>
-          <div className='w-full h-64 z-0 absolute -top-24'
-            style={{
-              backgroundImage: `url(${TechBackground})`,
-              backgroundAttachment: 'fixed',
-              backgroundPosition: 'center',
-              backgroundSize: 'cover'
-            }}
-          />
-          <Definitions/>
+      <div className="relative">
+        <div
+          className="w-full h-96 z-0 absolute -top-24"
+          style={{
+            backgroundImage: `url(${TechBackground})`,
+            backgroundAttachment: "fixed",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        />
+        <div className="flex w-full justify-center items-center mt--0 z-10">
+          <div
+            className="
+                    w-10/12 h-40 rounded-lg text-slate-100 font-poppins 
+                    flex flex-col px-10 z-10 mt-24 -ml-24
+                "
+          >
+            <h1 className="font-bold text-white text-6xl mb-5">
+              História da Criptografia
+            </h1>
+            <p className="text-xl">
+              Um processo histórico de proteção de dados
+            </p>
+          </div>
         </div>
-        <div className='relative'>
-          
-          <VerticalTimeline lineColor='rgb(39 39 42)' layout='1-column-left'>
-            <animated.div className=" w-2 bg-green-800 absolute top-0 bottom-0 translate-x-4 rounded-md" style={timelineAnimation} /> 
-
-            <TimelineElement date="Séc V - IV a.C.">
-              <div className='flex font-poppins justify-center items-center flex-col gap-5'>
-                  <h1 className='text-3xl text-emerald-600'>Citala Espartana</h1>
-                  <div className='flex gap-5 px-5'>
-                    <p className='text-justify'>
-                      Uma das formas mais antigas de criptografia é a Cítala, utilizada pelos generais espartanos ao mandar mensagens entre si. 
-                      A cítala consiste em um pedaço de madeira a qual dois generais possuíam, sendo as duas de exato mesmo tamanho e grossura, 
-                      dessa forma, se utilizava um pedaço fino de couro e o enrolavam na cítala e escreviam uma mensagem que seria lida na 
-                      vertical ao enrolar o couro na madeira, junto a mensagem original haviam diversos símbolos aleatórios. Sendo assim, só 
-                      uma pessoa com uma cítala idêntica poderia ver a combinação certa dos símbolos.
-                    </p>
-                    <img alt="" src={CitalaImg} className='rounded-lg w-1/3 h-auto mt-5'/>
-                  </div>
-              </div>
-            </TimelineElement>
-
-            <TimelineElement date="Séc IV a.C. - Séc I a.C">
-              <div className='flex font-poppins justify-center items-center flex-col gap-5'>
-                  <h1 className='text-3xl text-emerald-600'>Aeneas Tacticus</h1>
-                  <div className='flex gap-5 w-full justify-evenly'>
-                    <p className='text-justify w-1/2'>
-                    Os gregos foram os inventores da primeira cifra de transposição. Aeneas Tacticus escreveu um livro no qual dedicou um capítulo para a criptografia, e Polybius criou o tabuleiro de Polybius
-                    </p>
-                    <img alt="" src={PolybiusImg} className='rounded-lg w-1/5 mt-5'/>
-                  </div>
-              </div>
-            </TimelineElement>
-            <TimelineElement date="58 a.C. – 51 a.C.">
-              <div className='flex font-poppins justify-center items-center flex-col gap-5 px-5'>
-                  <h1 className='text-3xl text-emerald-600'>Cifra de César</h1>
-                  <p className='text-justify'>
-                    Durante o período das Guerras da Gália, o Imperador Júlio César criou e utilizou um dos mais 
-                    famosos métodos de criptografia, a Cifra de César.  Para poder enviar mensagens aos seus oficiais 
-                    sem grandes consequências caso as mesmas fossem interceptadas, as mensagens eram escritas de forma 
-                    que cada letra era substituída por um fator de k na ordem do alfabeto. Na época, o fator k era de 3, 
-                    sendo assim, cada letra de uma palavra seria substituída pela letra 3 posições na sua frente do alfabeto, 
-                    Exemplo: a palavra GUERRA em sua forma encriptada se torna JXHUUD.(essa é uma criptografia por substituição)
-                  </p>
-                  <div className='flex gap-40 w-full'>
-                      <Caesar/>
-                    <img alt="" src={CeasarImg} className='rounded-lg w-1/2'/>
-                  </div>
-              </div>
-            </TimelineElement>
-
-            <TimelineElement date="Séc IX d. C. ">
-              <div className='flex font-poppins justify-center items-center flex-col gap-5'>
-                <h1 className='text-3xl text-emerald-600'>Al-kindi</h1>
-                  <div className='flex font-poppins justify-center items-center flex-row gap-5 px-5'>
-                    <p className='text-justify'>
-                      Durante a época de ouro islâmica, o acesso ao conhecimento foi mais abrangente e sua busca encorajada, 
-                      isso permitiu que muitos grandes estudiosos se formassem, sendo um deles Al-Kindi. Al-Kindi foi responsável
-                      pela tradução de muitos textos e mensagens criptografadas de origem grega e romana, mas graças ao seu 
-                      acesso a estudos de Linguagem, Estatística e Matemática, ele foi capaz de desenvolver um método para 
-                      descobrir o conteúdo de mensagens criptografadas, sendo método a Análise de Frequência. Como o próprio 
-                      nome diz, ele tem como princípio ver qual o símbolo mais recorrente na mensagem e substituí-lo pela letra 
-                      mais recorrente na língua,o segundo símbolo mais recorrente pela segunda letra mais recorrente e assim em 
-                      diante. Tal método era tão eficiente que a cifra de césar foi facilmente decifrada por esse método, 
-                      tornando-a ineficiente. 
-
-                    </p>
-                    <img alt="" src={AlkindImg} className='rounded-lg w-1/4'/>
-                  </div>
-              </div>
-            </TimelineElement>
-
-            <TimelineElement date="Séc IX d. C. ">
-              <div className='flex font-poppins justify-center items-center flex-col gap-5'>
-                  <p className='text-justify'>
-                    Século XX
-                  </p>
-                  <img alt="" src="" className='rounded-lg'/>
-              </div>
-            </TimelineElement>
-
-            <TimelineElement date='2022'>
-              <div className='flex justify-center items-center flex-col gap-'>
-                <p>
-                  Olha isso é uma imagem legal nada relacionada a criptografia
-                </p>
-                <div className='w-60 h-auto'>
-                <img alt="" src="https://picsum.photos/100" className='rounded-md'/>
-                </div>
-              </div>
-            </TimelineElement>
-
-          </VerticalTimeline>
+      </div>
+      <div className="mt-20 flex flex-col w-full justify-center items-center">
+        <h2 className="text-white font-poppins text-3xl font-bold">
+          A Criptografia...
+        </h2>
+        <div className="px-10 flex mt-5 items-center gap-10">
+          <p className="text-gray-200 font-inter font-medium w-1/3 bg-gray-900 px-4 py-7 rounded-md">
+            A palavra criptografia vem das palavras gregas “kryptos” - ‘oculto,
+            secreto, obscuro’, e “graphien” - ‘escrita’.
+          </p>
+          <BsArrowRightCircle color="white" size={30} />
+          <p className="text-gray-200 font-inter font-medium w-1/3 bg-gray-900 px-4 py-2 rounded-md">
+            Essa “escrita oculta” vem avançando há milhares de anos. As técnicas
+            de criptografia evoluíram de acordo com as necessidades e a
+            tecnologia disponível em cada período.
+          </p>
+          <BsArrowRightCircle color="white" size={30} />
+          <p className="text-gray-200 font-inter font-medium w-1/3 bg-gray-900 px-4 py-5 rounded-md">
+            Quanto mais as mensagens são decifradas com as técnicas disponíveis,
+            mais as criptografias precisam evoluir como resposta.
+          </p>
         </div>
-
-        </div>
+      </div>
+      <div className="w-full justify-center gap-20 my-24 flex">
+        <NavLink to="cripClassic" end>
+          <div className="w-96 h-20 bg-zinc-700 rounded-lg text-center justify-center items-center flex gap-2 text-white cursor-pointer font-inter font-bold text-2xl hover:bg-zinc-600">
+            <ModelICon type="classic" />
+            Criptografia Clássica
+            <IoIosArrowForward color="white" size={35} />
+          </div>
+        </NavLink>
+        <NavLink to="cripModern" end>
+          <div className="w-96 h-20 bg-zinc-700 rounded-lg text-center justify-center items-center flex gap-2 text-white cursor-pointer font-inter font-bold text-2xl hover:bg-zinc-600">
+            <ModelICon type="modern" />
+            Criptografia Modérna
+            <IoIosArrowForward color="white" size={35} />
+          </div>
+        </NavLink>
+      </div>
     </div>
   );
 }

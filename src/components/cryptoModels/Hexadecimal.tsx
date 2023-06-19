@@ -1,69 +1,56 @@
-import { useState } from "react";
-import React from "react";
-import ModelICon from "../ModelIcon";
 import { AiOutlineInfoCircle } from "react-icons/ai";
-import { Popover } from "@mui/material";
+import ModelICon from "../ModelIcon";
 import InfoPopover from "../InfoPopover";
+import { Popover } from "@mui/material";
+import { useState } from "react";
 
-interface model {
+interface Model {
   isModel?: boolean;
 }
 
-export default function Caesar({ isModel }: model) {
-  const [encodeText, setEncodeText] = useState("");
-  const [decodeText, setDecodeText] = useState("");
-  const [key, setKey] = useState("");
+export default function Hexadecimal({ isModel }: Model) {
+  const [codificated, setCodificatedText] = useState("");
+  const [decodificated, setDecodificatedText] = useState("");
 
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
   const handleIconClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleCloseIcon = () => {
     setAnchorEl(null);
   };
 
   const encode = () => {
-    let strshifted = "";
-    let upperstr = encodeText.toUpperCase();
-    for (let i = 0; i < upperstr.length; i++) {
-      if (Number(upperstr.charAt(i)) < 65 || Number(upperstr.charAt(i)) > 90)
-        strshifted += upperstr.charAt(i);
-      else
-        strshifted += String.fromCharCode(
-          ((upperstr.charCodeAt(i) + (key !== "" ? parseInt(key) : 0) - 65) %
-            26) +
-            65
-        );
+    let code = "";
+    for (let i = 0; i < codificated.length; i++) {
+      const hexadecimal = codificated[i].charCodeAt(0).toString(16);
+      code += hexadecimal + " ";
     }
-    setDecodeText(strshifted);
+    setDecodificatedText(code.trim());
   };
 
   const decode = () => {
-    let strunshifted = "";
-    let upperstr = decodeText.toUpperCase();
-    for (let i = 0; i < upperstr.length; i++) {
-      if (Number(upperstr.charAt(i)) < 65 || Number(upperstr.charAt(i)) > 90)
-        strunshifted += upperstr.charAt(i);
-      else
-        strunshifted += String.fromCharCode(
-          ((upperstr.charCodeAt(i) - (key !== "" ? parseInt(key) : 0) + 65) %
-            26) +
-            65
-        );
+    let textMessage = "";
+    const hexadecimals = decodificated.split(" ");
+    for (let i = 0; i < hexadecimals.length; i++) {
+      const decimal = parseInt(hexadecimals[i], 16);
+      const char = String.fromCharCode(decimal);
+      textMessage += char;
     }
-    setEncodeText(strunshifted);
+    setCodificatedText(textMessage);
   };
 
   return (
     <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-80">
       <div className="flex h-12 w-full justify-between">
         <div className="">
-          <ModelICon type="classic" />
+          <ModelICon type="codificator" />
         </div>
         <div className="flex relative">
-          <div className="text-white font-semibold text-2xl underline mr-10 h-full  flex items-center justify-center ">
-            Cifra de Cesar
+          <div className="text-white font-semibold text-lg underline mr-8 h-full flex items-center justify-center ">
+            Codificação hexadecimal
           </div>
           <div className="relative">
             {isModel ? (
@@ -101,40 +88,29 @@ export default function Caesar({ isModel }: model) {
       </div>
       <div className="flex flex-col mt-8">
         <label className="font-medium text-base text-white">
-          Texto para encriptar:
+          Texto para codificar:
         </label>
         <input
           type="text"
           className="mt-3 outline-none bg-[#d9d9d9] rounded-lg px-3 w-full h-8 text-black font-medium"
-          name="encriptar"
-          value={encodeText}
+          name="codificar"
+          value={codificated}
           placeholder="valor"
           onChange={(e) => {
-            setEncodeText(e.target.value);
+            setCodificatedText(e.target.value);
           }}
         />
         <label className="font-medium text-base text-white mt-3">
-          Texto para decriptar:
+          Texto para decodificar:
         </label>
         <input
           type="text"
           className="mt-3 outline-none bg-[#d9d9d9] rounded-lg px-3 w-full h-8 text-black font-medium"
-          name="decriptar"
-          value={decodeText}
+          name="decodificar"
+          value={decodificated}
           placeholder="valor"
           onChange={(e) => {
-            setDecodeText(e.target.value);
-          }}
-        />
-        <label className="font-medium text-base text-white mt-3">Chave:</label>
-        <input
-          type="number"
-          className="mt-3 outline-none bg-[#d9d9d9] rounded-lg px-3 w-full h-8 text-black font-medium"
-          name="chave"
-          value={key}
-          placeholder="0"
-          onChange={(e) => {
-            setKey(e.target.value);
+            setDecodificatedText(e.target.value);
           }}
         />
       </div>
@@ -143,17 +119,17 @@ export default function Caesar({ isModel }: model) {
           onClick={() => {
             encode();
           }}
-          className="w-28 rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 rounded-lg h-9 bg-emerald-500 font-bold  select-none  flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
-          Encriptar
+          Codificar
         </div>
         <div
           onClick={() => {
             decode();
           }}
-          className="w-28 rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 rounded-lg h-9 bg-emerald-500 font-bold  select-none flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
-          Decriptar
+          Decodificar
         </div>
       </div>
     </div>

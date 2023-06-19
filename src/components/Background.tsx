@@ -1,15 +1,15 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect } from "react";
 
 export default function Background() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
-    const ctx = canvas.getContext('2d')!;
+    const ctx = canvas.getContext("2d")!;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    let binary: string[] = ['0', '1'];
+    let binary: string[] = ["0", "1"];
     const fontSize = 20;
     const columns = canvas.width / fontSize;
     const drops: number[] = [];
@@ -20,16 +20,20 @@ export default function Background() {
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = 'green';
+      ctx.fillStyle = "green";
       ctx.font = `${fontSize}px arial`;
 
       for (let i = 0; i < drops.length; i++) {
         const text = binary[Math.floor(Math.random() * binary.length)];
 
-        ctx.fillStyle = `rgba(4, 120, 87, ${Math.max(0, 0.2 - drops[i] / 200)})`;
+        ctx.fillStyle = `rgba(4, 120, 87, ${Math.max(
+          0,
+          0.2 - drops[i] / 200
+        )})`;
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) drops[i] = 0;
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.95)
+          drops[i] = 0;
         drops[i]++;
       }
     }
