@@ -256,7 +256,7 @@ function Classic() {
           <NavLink to="/cripModern" end>
             <div className="w-96 h-20 bg-zinc-700 rounded-lg text-center justify-center items-center flex gap-2 text-white cursor-pointer font-inter font-bold text-2xl hover:bg-zinc-600">
               <ModelICon type="modern" />
-              Criptografia Modérna
+              Criptografia Moderna
               <IoIosArrowForward color="white" size={35} />
             </div>
           </NavLink>
