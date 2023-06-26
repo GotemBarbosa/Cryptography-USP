@@ -47,7 +47,7 @@ export default function TripleDes({ isModel }: Model) {
           <ModelICon type="modern" />
         </div>
         <div className="flex relative">
-          <div className="text-white font-semibold text-lg sm:text-2xl sm:text-2xl underline mr-10 h-full pr-10 flex items-center justify-center ">
+          <div className="text-white font-semibold text-lg sm:text-2xl underline mr-10 h-full pr-10 flex items-center justify-center ">
             Triple DES
           </div>
           <div className="relative">
