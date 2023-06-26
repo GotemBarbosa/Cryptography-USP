@@ -10,7 +10,7 @@ permitindo a todos um contato mais próximo com a área de proteção de dados.
 * Desde pesquisa, organização, apresentação presencial à programação
 1. Gabriel Barbosa do Santos
 2. Rafael Brazolin Alves Mansur
-3. Shogo Shima
+3. Shogo Shima - [github-shogoshima](https://github.com/shogoshima)
 4. Thiago Zero Araujo
 
 ## Tecnologias
