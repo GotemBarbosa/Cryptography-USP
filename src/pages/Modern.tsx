@@ -68,7 +68,7 @@ function Modern() {
           <Definitions
             title="Criptografia Moderna"
             text="Forte base matemática, com definições formais de segurança, com algoritmos que já foram extensivamente usados, a Criptografia moderna
-          permitiu que os modelos criptografia fossem difundidos para o uso comercial e não apenas para o uso militar, com organizações tentando proteger os seus dados de competidores;
+          permitiu que os modelos criptográficos fossem difundidos para o uso comercial e não apenas para o uso militar, com organizações tentando proteger os seus dados de competidores;
           Alguns dos novos objetivos foram: confidencialidade, integridade, autenticidade e irretratabilidade.
           "
             type="modern"
@@ -127,7 +127,7 @@ function Modern() {
                     aprimoradas, as quais foram adquiridas pela marinha alemã em
                     1926. Durante a Segunda Guerra Mundial, tal máquina foi
                     expandida e utilizada por todas as comunicações de rádio
-                    alemãs e t ambém as de outras potências do Eixo. A máquina
+                    alemãs e também as de outras potências do Eixo. A máquina
                     foi decifrada somente em 1941, com Alan Turing, pai da
                     ciência computacional e da inteligência artificial.
                   </p>
@@ -171,11 +171,11 @@ function Modern() {
                     round, os 32 bits são expandidos para 48 bits em ordem de
                     poderem ser comparados com a chave de 48 bits de cada round,
                     depois os dois são reduzidos novamente para 32 bits, assim,
-                    o lado direito é passado para o lado esquerdo1 sem
-                    alteração, e o lado esquerdo é passado para o lado direito1
+                    o lado direito é passado para o lado esquerdo sem
+                    alteração, e o lado esquerdo é passado para o lado direito
                     passando por uma operação xor com o lado direito, sendo esse
                     processo o round 1 de um total de 16 rounds. No final dos 16
-                    ronds é obtida a mensagem criptografada.
+                    rounds é obtida a mensagem criptografada.
                   </p>
                   <img
                     alt=""
@@ -245,12 +245,12 @@ function Modern() {
                     O AES (Advanced Encryption Standard) surgiu após DES,
                     substituindo-o, sendo adotado até mesmo pela agência de
                     segurança nacional dos E.U.A, uma vez que apresenta uma
-                    segurança muito superior. O AES é uma variante do família
+                    segurança muito superior. O AES é uma variante da família
                     Rijndael, sendo este grupo de criptografias que faz
-                    homenagem aos criptografia belgas Joan Daemen e Vincent
+                    homenagem aos belgas Joan Daemen e Vincent
                     Rijmen, e no momento de sua criação, este estilo de
                     criptografia era o mais seguro existente, apresentando
-                    chaves que podiam chegar até 256, muito superior aos 56 do
+                    chaves que podiam chegar até 256 bits, muito superior aos 56 do
                     DES. A criptografia AES consiste em um processo repetitivo
                     de transformar a mensagem original em uma matriz, substituir
                     os termos com o uso de uma tabela específica gerada a partir
@@ -305,11 +305,11 @@ function Modern() {
                     em inglês ECC) foi proposta por Neal Koblitz e Victor Miller
                     em 1985, porém só passou a ser implementada em 2005, se
                     provando muito mais segura que métodos anteriores. Para
-                    colocar em perspectiva, para obter a segurança se uma chave
+                    colocar em perspectiva, para obter a segurança de uma chave
                     de 256 bits em ECC, era necessária uma chave de 3072 bits em
                     RSA. A criptografia em ECC consiste no uso de uma curva
                     elíptica simétrica ao eixo X, onde se é marcado um ponto
-                    inicial , A, e um segundo ponto ,B, que formarão uma reta.
+                    inicial  A e um segundo ponto B, que formarão uma reta.
                     Essa reta irá colidir com outro ponto da elipse formando o
                     ponto C, que será refletido para o outro lado do eixo X,
                     formando o ponto D, sendo assim, será traçada uma reta do
