@@ -29,13 +29,13 @@ export default function Sha256({ isModel }: Model) {
   };
 
   return (
-    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-80">
+    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-54 sm:w-80">
       <div className="flex h-12 w-full justify-between">
         <div className="">
           <ModelICon type="hash" />
         </div>
         <div className="flex relative">
-          <div className="text-white font-semibold text-2xl underline mr-10 h-full  pr-12 flex items-center justify-center ">
+          <div className="text-white font-semibold text-xm sm:text-2xl underline mr-10 h-full pl-2 sm:pl-0 pr-7 flex items-center justify-center ">
             SHA-256
           </div>
           <div className="relative">
@@ -64,9 +64,10 @@ export default function Sha256({ isModel }: Model) {
               }}
             >
               <InfoPopover
-                description="oie"
-                date="20/04/2022"
-                type="Criptografia classica"
+                description="É um tipo de “assinatura” para um texto ou dado de um arquivo. SHA-256 gera uma praticamente única 256-bit (32-byte) assinatura para um texto específico. Portanto, ao comparar o hash computado de um arquivo a um valor de hash conhecido e esperado, é possível determinar a integridade dos dados, permitindo ver se o arquivo foi modificado ou adulterado.
+                "
+                date="2001"
+                type="Hash criptográfico"
               />
             </Popover>
           </div>
@@ -101,7 +102,7 @@ export default function Sha256({ isModel }: Model) {
           onClick={() => {
             encode();
           }}
-          className="w-28 rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Codificar
         </div>

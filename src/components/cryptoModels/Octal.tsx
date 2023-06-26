@@ -43,13 +43,13 @@ export default function Octal({ isModel }: Model) {
   };
 
   return (
-    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-80">
+    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-54 sm:w-80">
       <div className="flex h-12 w-full justify-between">
         <div className="">
           <ModelICon type="codificator" />
         </div>
         <div className="flex relative">
-          <div className="text-white font-semibold text-xl underline mr-10 h-full  flex items-center justify-center ">
+          <div className="text-white font-semibold text-lg sm:text-2xl underline ml-2 mr-10 h-full  flex items-center justify-center ">
             Codificação octal
           </div>
           <div className="relative">
@@ -78,9 +78,10 @@ export default function Octal({ isModel }: Model) {
               }}
             >
               <InfoPopover
-                description="oie"
-                date="20/04/2022"
-                type="Criptografia classica"
+                description=" É uma codificação similar à binária, porém em vez de trabalhar com números de base 2, a octal trabalha com números de base 8. É utilizada na computação para representar números binários de forma mais curta, agrupando os dígitos binários em apenas 3. Foi criada antes da codificação binária, com outros objetivos.
+                "
+                date="1801"
+                type="Codificação"
               />
             </Popover>
           </div>
@@ -119,7 +120,7 @@ export default function Octal({ isModel }: Model) {
           onClick={() => {
             encode();
           }}
-          className="w-28 rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Codificar
         </div>
@@ -127,7 +128,7 @@ export default function Octal({ isModel }: Model) {
           onClick={() => {
             decode();
           }}
-          className="w-28 rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Decodificar
         </div>

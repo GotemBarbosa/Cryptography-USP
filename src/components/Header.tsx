@@ -45,11 +45,11 @@ export default function Header({ home }: props) {
             <img
               alt=""
               src={!isFixed && home ? ICMCLogo2 : ICMCLogo}
-              className="h-full w-auto opacity-80 cursor-pointer"
+              className=" sm:h-full sm:w-auto  opacity-80 cursor-pointer"
             />
           </NavLink>
         </div>
-        <div className="flex w-1/3 justify-around">
+        <div className="flex w-4/5 justify-around md:w-5/12">
           <PageButton text="Home" link="/" />
           <PageButton text="Modelos" link="/modelos" />
           <PageButton text="Fontes" link="/fontes" />

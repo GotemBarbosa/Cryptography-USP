@@ -104,13 +104,13 @@ export default function MorseCode({ isModel }: Model) {
   };
 
   return (
-    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-80">
+    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-54 sm:w-80">
       <div className="flex h-12 w-full justify-between">
         <div className="">
           <ModelIcon type="morse" />
         </div>
         <div className="flex relative">
-          <div className="text-white font-semibold text-2xl underline mr-10 h-full  flex items-center justify-center ">
+          <div className="text-white font-semibold text-lg sm:text-2xl underline mr-10 h-full  flex items-center justify-center ">
             Código Morse
           </div>
           <div className="relative">
@@ -139,9 +139,10 @@ export default function MorseCode({ isModel }: Model) {
               }}
             >
               <InfoPopover
-                description="O Código Morse é um sistema de comunicação que utiliza combinações de pontos e traços para representar letras, números e sinais de pontuação. Neste modelo, você pode converter texto em Código Morse e vice-versa."
-                date="13/06/2023"
-                type="Criptografia"
+                description="É um método usado em telecomunicação para codificar caracteres de texto em sequências padronizadas de 2 diferentes durações de sinais, chamados de pontos e traços. Foi desenvolvido junto com a invenção do telégrafo, pois era preciso encontrar um jeito de se comunicar utilizando apenas pulsos elétricos e os silêncios entre eles.
+                "
+                date="1844"
+                type="Codificação"
               />
             </Popover>
           </div>
@@ -180,7 +181,7 @@ export default function MorseCode({ isModel }: Model) {
           onClick={() => {
             encode();
           }}
-          className="w-28 rounded-lg h-9 bg-emerald-500 select-none  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 bg-emerald-500 select-none  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Codificar
         </div>
@@ -188,7 +189,7 @@ export default function MorseCode({ isModel }: Model) {
           onClick={() => {
             decode();
           }}
-          className="w-28 rounded-lg h-9 bg-emerald-500 select-none  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 bg-emerald-500 select-none  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Decodificar
         </div>

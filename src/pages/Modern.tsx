@@ -76,8 +76,8 @@ function Modern() {
         </div>
         <div className="my-20 flex mx-28">
           <NavLink to="/cripClassic" end>
-            <div className="w-96 h-20 bg-zinc-700 rounded-lg text-center justify-center items-center flex gap-2 text-white cursor-pointer font-inter font-bold text-2xl hover:bg-zinc-600">
-              <ModelICon type="classic" />
+          <div className="w-68 md:w-96 px-2 mx-10 md:mx-0 md:px-0 h-20 bg-zinc-700 rounded-lg text-center justify-center items-center flex gap-2 text-white cursor-pointer font-inter font-bold text-sm md:text-2xl hover:bg-zinc-600 -ml-10">
+            <ModelICon type="classic" />
               Criptografia Clássica
               <IoIosArrowBack color="white" size={35} />
             </div>
@@ -95,7 +95,7 @@ function Modern() {
                 <h1 className="text-3xl text-emerald-600">
                   Máquina de rotor de Hebern{" "}
                 </h1>
-                <div className="flex gap-5 px-5">
+                <div className="flex gap-5 px-5 flex-col sm:flex-row">
                   <p className="text-justify">
                     O americano Edward H. Hebern inventou a máquina de
                     criptografia com rotores, que era uma máquina de cifragem
@@ -109,7 +109,7 @@ function Modern() {
                   <img
                     alt=""
                     src={HebernImg}
-                    className="rounded-lg w-1/3 h-auto mt-5"
+                    className="rounded-lg w-full sm:w-1/3 h-auto mt-5"
                   />
                 </div>
               </div>
@@ -118,7 +118,7 @@ function Modern() {
             <TimelineElement date="1918.">
               <div className="flex font-poppins justify-center items-center flex-col gap-5">
                 <h1 className="text-3xl text-emerald-600">Enigma</h1>
-                <div className="flex gap-5 px-5">
+                <div className="flex gap-5 px-5 flex-col sm:flex-row">
                   <p className="text-justify">
                     O engenheiro alemão Arthur Scherbius desenvolveu a icônica
                     máquina de criptografia “Enigma”, que utilizava 3 ou mais
@@ -134,7 +134,7 @@ function Modern() {
                   <img
                     alt=""
                     src={EnigmaImg}
-                    className="rounded-lg w-1/3 h-auto mt-5"
+                    className="rounded-lg w-full sm:w-1/3 h-auto mt-5"
                   />
                 </div>
               </div>
@@ -143,7 +143,7 @@ function Modern() {
             <TimelineElement date="1971.">
               <div className="flex font-poppins justify-center items-center flex-col gap-5">
                 <h1 className="text-3xl text-emerald-600">Lucifer</h1>
-                <div className="flex gap-5 px-5">
+                <div className="flex gap-5 px-5 flex-col sm:flex-row">
                   <p className="text-justify">
                     IBM criou uma cifra chamada Lucifer, um tipo de cifra de
                     blocos que usa um algoritmo operando em uma quantidade fixa
@@ -161,7 +161,7 @@ function Modern() {
             <TimelineElement date="1976.">
               <div className="flex font-poppins justify-center items-center flex-col gap-5">
                 <h1 className="text-3xl text-emerald-600">DES</h1>
-                <div className="flex gap-5 px-5">
+                <div className="flex gap-5 px-5 flex-col sm:flex-row">
                   <p className="text-justify">
                     Após o protótipo Lucifer, a IBM melhorou o sistema de
                     encriptação até a criação do DES (Data Encryption Standard).
@@ -180,7 +180,7 @@ function Modern() {
                   <img
                     alt=""
                     src={DESImg}
-                    className="rounded-lg w-1/3 h-auto mt-5"
+                    className="rounded-lg w-full sm:w-1/3 h-auto mt-5"
                   />
                 </div>
               </div>
@@ -189,7 +189,7 @@ function Modern() {
             <TimelineElement date="1977.">
               <div className="flex font-poppins justify-center items-center flex-col gap-5">
                 <h1 className="text-3xl text-emerald-600">RSA</h1>
-                <div className="flex gap-5 px-5">
+                <div className="flex gap-5 px-5 flex-col sm:flex-row">
                   <p className="text-justify">
                     Foi proposto um algoritmo de criptografia assimétrica
                     baseado em chaves pública-privada por Ron Rivest, Adi Shamir
@@ -210,7 +210,7 @@ function Modern() {
             <TimelineElement date="1998.">
               <div className="flex font-poppins justify-center items-center flex-col gap-5">
                 <h1 className="text-3xl text-emerald-600">Triple DES</h1>
-                <div className="flex gap-5 px-5">
+                <div className="flex gap-5 px-5 flex-col sm:flex-row">
                   <p className="text-justify">
                     Com o avanço da tecnologia, e por consequência dos métodos
                     de decifração de códigos, o DES, com sua pequena chave de 56
@@ -231,7 +231,7 @@ function Modern() {
                   <img
                     alt=""
                     src={tripleDesImg}
-                    className="rounded-lg w-[700px]"
+                    className="rounded-lg w-full sm:w-[700px]"
                   />
                 </div>
               </div>
@@ -282,14 +282,14 @@ function Modern() {
                   a abertura da Criptex.
                 </p>
                 <img alt="" src="" className="rounded-lg" />
-                <div className="flex w-full gap-5">
-                  <div className="bg-slate-800 rounded-lg w-3/4">
+                <div className="flex w-full gap-5 flex-col sm:flex-row">
+                  <div className="bg-slate-800 rounded-lg w-full sm:w-3/4">
                     <CanvaModel />
                   </div>
                   <img
                     alt=""
                     src={CryptexImg}
-                    className="rounded-lg w-[400px]"
+                    className="rounded-lg w-full sm:w-[400px]"
                   />
                 </div>
               </div>
@@ -299,7 +299,7 @@ function Modern() {
                 <h1 className="text-3xl text-emerald-600">
                   Criptografia de curva elíptica
                 </h1>
-                <div className="flex gap-5 px-5">
+                <div className="flex gap-5 px-5 flex-col sm:flex-row">
                   <p className="text-justify">
                     A Criptografia de Curva Elíptica (mais conhecida pela sigla
                     em inglês ECC) foi proposta por Neal Koblitz e Victor Miller
@@ -320,7 +320,7 @@ function Modern() {
                   <img
                     alt=""
                     src={ElipticaImg}
-                    className="rounded-lg w-1/3 h-auto mt-5"
+                    className="rounded-lg w-full sm:w-1/3 h-auto mt-5"
                   />
                 </div>
               </div>

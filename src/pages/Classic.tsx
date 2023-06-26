@@ -79,7 +79,7 @@ function Classic() {
             <TimelineElement date="1900 a.C">
               <div className="flex font-poppins justify-center items-center flex-col gap-5">
                 <h1 className="text-3xl text-emerald-600">Os Egípcios</h1>
-                <div className="flex gap-5 px-5">
+                <div className="flex flex-col sm:flex-row gap-5 px-5">
                   <p className="text-justify">
                     O primeiro registro documentado do uso da criptografia
                     ocorreu na civilização egípcia, quando uma série de
@@ -99,7 +99,7 @@ function Classic() {
                 <h1 className="text-3xl text-emerald-600">
                   Cifra Mesopotâmica
                 </h1>
-                <div className="flex gap-5 px-5">
+                <div className="flex flex-col sm:flex-row gap-5 px-5">
                   <p className="text-justify">
                     A cifra mesopotâmica utilizou a criptografia para esconder a
                     fórmula do esmalte de cerâmica que utilizavam. Ela é o
@@ -112,7 +112,7 @@ function Classic() {
                   <img
                     alt=""
                     src={Mesopotam}
-                    className="rounded-lg w-1/3 h-auto mt-5"
+                    className="rounded-lg w-5/6 sm:w-1/3 h-auto mt-5"
                   />
                 </div>
               </div>
@@ -121,7 +121,7 @@ function Classic() {
             <TimelineElement date="Séc V - IV a.C.">
               <div className="flex font-poppins justify-center items-center flex-col gap-5">
                 <h1 className="text-3xl text-emerald-600">Citala Espartana</h1>
-                <div className="flex gap-5 px-5">
+                <div className="flex flex-col sm:flex-row gap-5 px-5">
                   <p className="text-justify">
                     Uma das formas mais antigas de criptografia é a Cítala,
                     utilizada pelos generais espartanos ao mandar mensagens
@@ -137,7 +137,7 @@ function Classic() {
                   <img
                     alt=""
                     src={CitalaImg}
-                    className="rounded-lg w-1/3 h-auto mt-5"
+                    className="rounded-lg w-5/6 sm:w-1/3 h-auto mt-5"
                   />
                 </div>
               </div>
@@ -146,7 +146,7 @@ function Classic() {
             <TimelineElement date="Séc IV a.C. - Séc I a.C">
               <div className="flex font-poppins justify-center items-center flex-col gap-5">
                 <h1 className="text-3xl text-emerald-600">Aeneas Tacticus</h1>
-                <div className="flex gap-5 w-full justify-evenly">
+                <div className="flex gap-5 flex-col sm:flex-row w-full justify-evenly">
                   <p className="text-justify w-1/2">
                     Os gregos foram os inventores da primeira cifra de
                     transposição. Aeneas Tacticus escreveu um livro no qual
@@ -156,7 +156,7 @@ function Classic() {
                   <img
                     alt=""
                     src={PolybiusImg}
-                    className="rounded-lg w-1/5 mt-5"
+                    className="rounded-lg w-full sm:w-1/5 mt-5"
                   />
                 </div>
               </div>
@@ -178,25 +178,26 @@ function Classic() {
                   forma encriptada se torna JXHUUD.(essa é uma criptografia por
                   substituição)
                 </p>
-                <div className="flex gap-36 w-full">
+                <div className="flex flex-col sm:flex-row gap-36 w-full">
                   <Caesar />
-                  <img alt="" src={CeasarImg} className="rounded-lg w-2/5" />
+                  <img alt="" src={CeasarImg} className="rounded-lg w-full sm:w-2/5" />
                 </div>
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/bdHteknuMQA"
+                <iframe 
+                  width="100%"
+                  height="400"
+                  src="https://www.youtube.com/embed/OvGzkMrXVNc" 
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
+                  allowFullScreen 
                 />
+                
               </div>
             </TimelineElement>
 
             <TimelineElement date="Séc IX d. C. ">
               <div className="flex font-poppins justify-center items-center flex-col gap-5">
                 <h1 className="text-3xl text-emerald-600">Al-kindi</h1>
-                <div className="flex font-poppins justify-center items-center flex-row gap-5 px-5">
+                <div className="flex font-poppins justify-center items-center flex-col sm:flex-row gap-5 px-5">
                   <p className="text-justify">
                     Durante a Idade Média, os árabes contribuíram muito para os
                     processos criptográficos. Dentre eles, Al-Kindi foi
@@ -208,7 +209,7 @@ function Classic() {
                     era tão eficiente que a cifra de césar foi facilmente
                     decifrada por esse método, tornando-a ineficiente.
                   </p>
-                  <img alt="" src={AlkindImg} className="rounded-lg w-1/4" />
+                  <img alt="" src={AlkindImg} className="rounded-lg w-full sm:w-1/4" />
                 </div>
               </div>
             </TimelineElement>
@@ -231,22 +232,22 @@ function Classic() {
                     Somente 3 séculos depois ela foi decifrada por Friedrich
                     Kasiski.
                   </p>
-                  <div className="flex gap-36 w-full justify-around">
+                  <div className="flex gap-36 flex-col md:flex-row w-full justify-around">
                     <Vigenere />
                     <img
                       alt=""
                       src={VigenereImg}
-                      className="rounded-lg w-1/3"
+                      className="rounded-lg w-5/6 sm:w-1/3"
                     />
                   </div>
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/llBtwfc2vhE"
+                  <iframe 
+                    width="80%"
+                    height="400"
+                    src="https://www.youtube.com/embed/q_tSDVjzFBg" 
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                  />
+                    />
                 </div>
               </div>
             </TimelineElement>
@@ -254,9 +255,9 @@ function Classic() {
         </div>
         <div className="my-20 flex justify-end mx-28">
           <NavLink to="/cripModern" end>
-            <div className="w-96 h-20 bg-zinc-700 rounded-lg text-center justify-center items-center flex gap-2 text-white cursor-pointer font-inter font-bold text-2xl hover:bg-zinc-600">
+            <div className="w-68 md:w-96 -mr-10 sm:ml-0 px-2 mx-10 md:mx-0 md:px-0 h-20 bg-zinc-700 rounded-lg text-center justify-center items-center flex gap-2 text-white cursor-pointer font-inter font-bold text-sm md:text-2xl hover:bg-zinc-600">
               <ModelICon type="modern" />
-              Criptografia Moderna
+                Criptografia Moderna
               <IoIosArrowForward color="white" size={35} />
             </div>
           </NavLink>

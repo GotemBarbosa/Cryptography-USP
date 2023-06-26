@@ -29,13 +29,13 @@ export default function Md5({ isModel }: Model) {
   };
 
   return (
-    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-80">
+    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-54 sm:w-80">
       <div className="flex h-12 w-full justify-between">
         <div className="">
           <ModelIcon type="hash" />
         </div>
         <div className="flex relative">
-          <div className="text-white font-semibold text-2xl underline mr-10 pr-16 h-full flex items-center justify-center ">
+          <div className="text-white font-semibold text-lg sm:text-2xl underline mr-10 pr-16 h-full flex items-center justify-center ">
             MD5
           </div>
           <div className="relative">
@@ -64,9 +64,10 @@ export default function Md5({ isModel }: Model) {
               }}
             >
               <InfoPopover
-                description="oie"
-                date="20/04/2022"
-                type="Criptografia classica"
+                description=" É uma função hash amplamente utilizada que produz um hash de 128 bits. Como outros algoritmos de hash, é utilizado para verificar a integridade de dados. Porém, possui preferência de uso em alguns casos por necessitar de menos requerimentos computacionais que os mais recentes Secure Hash Algorithms (SHA).
+                "
+                date="1992"
+                type="Hash criptográfico"
               />
             </Popover>
           </div>
@@ -101,7 +102,7 @@ export default function Md5({ isModel }: Model) {
           onClick={() => {
             encode();
           }}
-          className="w-28 rounded-lg h-9 bg-emerald-500 select-none  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 bg-emerald-500 select-none  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Codificar
         </div>

@@ -39,13 +39,13 @@ export default function Base64({ isModel }: Model) {
   };
 
   return (
-    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-80">
+    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-54 sm:w-80">
       <div className="flex h-12 w-full justify-between">
         <div className="">
           <ModelICon type="modern" />
         </div>
         <div className="flex relative">
-          <div className="text-white font-semibold text-2xl underline mr-10 h-full  pr-14 flex items-center justify-center ">
+          <div className="text-white font-semibold text-lg sm:text-2xl underline mr-10 h-full  pr-14 flex items-center justify-center ">
             Base64
           </div>
           <div className="relative">
@@ -74,9 +74,9 @@ export default function Base64({ isModel }: Model) {
               }}
             >
               <InfoPopover
-                description="oie"
-                date="20/04/2022"
-                type="Criptografia classica"
+                description="É um grupo de esquemas de codificação binários que representam dados binários no formato ASCII traduzindo-os em uma representação radix-64. É comumente utilizado para encriptar dados binários para armazenamento ou enviar arquivos que funcionam somente com textos ASCII. Isso garante que os dados permaneçam intactos durante o envio."
+                date="1987"
+                type="Codificação Binária"
               />
             </Popover>
           </div>
@@ -126,7 +126,7 @@ export default function Base64({ isModel }: Model) {
           onClick={() => {
             encode();
           }}
-          className="w-28 rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Codificar
         </div>
@@ -134,7 +134,7 @@ export default function Base64({ isModel }: Model) {
           onClick={() => {
             decode();
           }}
-          className="w-28 rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Decodificar
         </div>

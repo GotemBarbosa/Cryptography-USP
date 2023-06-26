@@ -41,13 +41,13 @@ export default function TripleDes({ isModel }: Model) {
   };
 
   return (
-    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-80">
+    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-54 sm:w-80">
       <div className="flex h-12 w-full justify-between">
         <div className="">
           <ModelICon type="modern" />
         </div>
         <div className="flex relative">
-          <div className="text-white font-semibold text-2xl underline mr-10 h-full pr-10 flex items-center justify-center ">
+          <div className="text-white font-semibold text-lg sm:text-2xl sm:text-2xl underline mr-10 h-full pr-10 flex items-center justify-center ">
             Triple DES
           </div>
           <div className="relative">
@@ -76,9 +76,9 @@ export default function TripleDes({ isModel }: Model) {
               }}
             >
               <InfoPopover
-                description="oie"
-                date="20/04/2022"
-                type="Criptografia classica"
+                description="É uma cifra de chaves simétricas, que aplica o algoritmo da DES 3 vezes para cada bloco. Foi uma tentativa de proteger os dados de ataques cada vez mais robustos na cifra original da DES, utilizando um método simples para aumentar o tamanho da chave. Atualmente, foi substituída pelo AES."
+                date="1978"
+                type="Criptografia simétrica"
               />
             </Popover>
           </div>
@@ -122,13 +122,13 @@ export default function TripleDes({ isModel }: Model) {
       <div className="flex justify-between px-3 mt-4">
         <div
           onClick={encryptTripleDES}
-          className="w-28 rounded-lg h-9 bg-emerald-500 select-none  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 bg-emerald-500 select-none  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Encriptar
         </div>
         <div
           onClick={decryptTripleDES}
-          className="w-28 rounded-lg h-9 bg-emerald-500 select-none  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 bg-emerald-500 select-none  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Decriptar
         </div>

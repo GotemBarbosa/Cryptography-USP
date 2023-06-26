@@ -17,7 +17,7 @@ export default function ModelICon({ type }: modelIconProps) {
           : type === "modern"
           ? "bg-emerald-600"
           : "bg-stone-700"
-      } w-12 h-12 rounded-lg flex justify-center items-center`}
+      } w-16 h-12 sm:w-12 sm:h-12 rounded-lg mx-1 flex justify-center items-center`}
     >
       {type === "classic" ? (
         <HiOutlineBookOpen color="white" size={30} />

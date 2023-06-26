@@ -56,13 +56,13 @@ export default function Caesar({ isModel }: model) {
   };
 
   return (
-    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-80">
+    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-54 sm:w-80">
       <div className="flex h-12 w-full justify-between">
         <div className="">
           <ModelICon type="classic" />
         </div>
         <div className="flex relative">
-          <div className="text-white font-semibold text-2xl underline mr-10 h-full  flex items-center justify-center ">
+          <div className="text-white font-semibold text-lg sm:text-2xl underline mr-10 h-full  flex items-center justify-center ">
             Cifra de Cesar
           </div>
           <div className="relative">
@@ -91,9 +91,9 @@ export default function Caesar({ isModel }: model) {
               }}
             >
               <InfoPopover
-                description="oie"
-                date="20/04/2022"
-                type="Criptografia classica"
+                description="É uma técnica de encriptação simples usada por Júlio César para mandar mensagens secretas para aliados. Consistia em deslocar as letras do texto em um certo número de posições “k”, chamado de chave."
+                date="100 a.C."
+                type="Substituição monoalfabética"
               />
             </Popover>
           </div>
@@ -143,7 +143,7 @@ export default function Caesar({ isModel }: model) {
           onClick={() => {
             encode();
           }}
-          className="w-28 rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Encriptar
         </div>
@@ -151,7 +151,7 @@ export default function Caesar({ isModel }: model) {
           onClick={() => {
             decode();
           }}
-          className="w-28 rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Decriptar
         </div>

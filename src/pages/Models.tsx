@@ -19,7 +19,7 @@ export default function Models() {
       <div className="px-20 pt-5 pb-0">
         <h1 className="text-white text-3xl font-poppins">Modelos:</h1>
       </div>
-      <div className="w-full flex flex-wrap px-10 text-white ">
+      <div className="w-full flex flex-wrap px-2 sm:px-10 text-white ">
         <div className="mx-10 mt-10">
           <Caesar isModel />
         </div>

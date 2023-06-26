@@ -104,13 +104,13 @@ export default function Vigenere({ isModel }: model) {
   };
 
   return (
-    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-80">
+    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-54 sm:w-80">
       <div className="flex h-12 w-full justify-between">
         <div className="">
           <ModelICon type="classic" />
         </div>
         <div className="flex relative">
-          <div className="text-white font-semibold text-2xl underline mr-10 h-full  flex items-center justify-center ">
+          <div className="text-white font-semibold text-lg sm:text-2xl underline mr-8 h-full  flex items-center justify-center ">
             Cifra de Vigenere
           </div>
           <div className="relative">
@@ -139,9 +139,9 @@ export default function Vigenere({ isModel }: model) {
               }}
             >
               <InfoPopover
-                description="oie"
-                date="20/04/2022"
-                type="Criptografia classica"
+                description="É uma técnica de encriptamento de substituição polialfabética, em que se substitui as letras do texto utilizando múltiplos alfabetos de substituição, conhecidos como tabela de Vigenère. Os alfabetos utilizados em cada ponto depende de cada letra de uma chave que se repete."
+                date="1465"
+                type="Substituição polialfabética"
               />
             </Popover>
           </div>
@@ -192,7 +192,7 @@ export default function Vigenere({ isModel }: model) {
           onClick={() => {
             encode();
           }}
-          className="w-28 select-none rounded-lg h-9 bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] select-none rounded-lg h-9 bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Encriptar
         </div>
@@ -200,7 +200,7 @@ export default function Vigenere({ isModel }: model) {
           onClick={() => {
             decode();
           }}
-          className="w-28 select-none rounded-lg h-9 bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] select-none rounded-lg h-9 bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Decriptar
         </div>

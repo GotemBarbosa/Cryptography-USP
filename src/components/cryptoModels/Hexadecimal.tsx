@@ -43,13 +43,13 @@ export default function Hexadecimal({ isModel }: Model) {
   };
 
   return (
-    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-80">
+    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-54 sm:w-80">
       <div className="flex h-12 w-full justify-between">
         <div className="">
           <ModelICon type="codificator" />
         </div>
         <div className="flex relative">
-          <div className="text-white font-semibold text-lg underline mr-8 h-full flex items-center justify-center ">
+          <div className="text-white font-semibold ml-2 text-lg sm:text-2xl underline mr-8 h-full flex items-center justify-center ">
             Codificação hexadecimal
           </div>
           <div className="relative">
@@ -78,9 +78,10 @@ export default function Hexadecimal({ isModel }: Model) {
               }}
             >
               <InfoPopover
-                description="oie"
-                date="20/04/2022"
-                type="Criptografia classica"
+                description="Similarmente à octal, a codificação hexadecimal é utilizada por desenvolvedores de software e designers de sistemas para representar números binários de forma mais prática, pois 1 byte (8 bits), que seria representado com 8 dígitos em binário, pode ser representado com apenas 2 em hexadecimal.
+                "
+                date="1859"
+                type="Codificação"
               />
             </Popover>
           </div>
@@ -119,7 +120,7 @@ export default function Hexadecimal({ isModel }: Model) {
           onClick={() => {
             encode();
           }}
-          className="w-28 rounded-lg h-9 bg-emerald-500 font-bold  select-none  flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 bg-emerald-500 font-bold  select-none  flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Codificar
         </div>
@@ -127,7 +128,7 @@ export default function Hexadecimal({ isModel }: Model) {
           onClick={() => {
             decode();
           }}
-          className="w-28 rounded-lg h-9 bg-emerald-500 font-bold  select-none flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 bg-emerald-500 font-bold  select-none flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Decodificar
         </div>

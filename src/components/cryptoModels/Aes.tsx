@@ -45,13 +45,13 @@ export default function AES({ isModel }: Model) {
   };
 
   return (
-    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-80">
+    <div className="bg-slate-800 rounded-lg shadow-md p-2 font-inter w-54 sm:w-80">
       <div className="flex h-12 w-full justify-between">
         <div className="">
           <ModelIcon type="modern" />
         </div>
         <div className="flex relative">
-          <div className="text-white font-semibold text-2xl underline mr-10 h-full  pr-16 flex items-center justify-center ">
+          <div className="text-white font-semibold text-lg sm:text-2xl underline mr-10 h-full  pr-16 flex items-center justify-center ">
             AES
           </div>
           <div className="relative">
@@ -81,7 +81,7 @@ export default function AES({ isModel }: Model) {
             >
               <InfoPopover
                 description="É um algoritmo de criptografia simétrica amplamente adotado. Ele é usado para criptografar e descriptografar dados usando a mesma chave. O AES é considerado seguro e é usado em várias aplicações, como proteção de dados em redes, criptografia de arquivos e comunicação segura."
-                date="20/04/2022"
+                date="2001"
                 type="Criptografia simétrica"
               />
             </Popover>
@@ -131,7 +131,7 @@ export default function AES({ isModel }: Model) {
           onClick={() => {
             encrypt();
           }}
-          className="w-28 rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] rounded-lg h-9 select-none  bg-emerald-500 font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Encriptar
         </div>
@@ -139,7 +139,7 @@ export default function AES({ isModel }: Model) {
           onClick={() => {
             decrypt();
           }}
-          className="w-28 select-none rounded-lg h-9 bg-emerald-500  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
+          className="w-28 mx-[2px] select-none rounded-lg h-9 bg-emerald-500  font-bold flex justify-center items-center cursor-pointer outline-offset-1 outline-2 outline-emerald-500 hover:bg-emerald-400"
         >
           Decriptar
         </div>
